@@ -1,0 +1,154 @@
+.themeSwitch {
+  position: fixed;
+  top: 24px;
+  right: 24px;
+  z-index: 1001;
+  background: transparent;
+  border: none;
+  cursor: pointer;
+  padding: 0;
+  transition: transform 0.3s ease;
+}
+
+.themeSwitch:hover {
+  transform: scale(1.05);
+}
+
+.themeSwitch:active {
+  transform: scale(0.95);
+}
+
+.switchTrack {
+  display: flex;
+  align-items: center;
+  width: 64px;
+  height: 34px;
+  background: rgba(10, 10, 10, 0.8);
+  backdrop-filter: blur(20px);
+  border: 1px solid rgba(255, 255, 255, 0.1);
+  border-radius: 17px;
+  position: relative;
+  padding: 3px;
+  transition: all 0.4s cubic-bezier(0.4, 0, 0.2, 1);
+}
+
+:global([data-theme="light"]) .switchTrack {
+  background: rgba(255, 255, 255, 0.9);
+  border-color: rgba(0, 0, 0, 0.1);
+  box-shadow: 
+    0 4px 20px rgba(0, 0, 0, 0.1),
+    inset 0 1px 2px rgba(0, 0, 0, 0.05);
+}
+
+.switchThumb {
+  position: absolute;
+  left: 3px;
+  width: 28px;
+  height: 28px;
+  background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+  border-radius: 50%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  transition: all 0.4s cubic-bezier(0.4, 0, 0.2, 1);
+  box-shadow: 
+    0 2px 10px rgba(102, 126, 234, 0.4),
+    0 4px 20px rgba(102, 126, 234, 0.2);
+  z-index: 2;
+}
+
+.switchThumb.light {
+  left: calc(100% - 31px);
+  background: linear-gradient(135deg, #ff9f43 0%, #f7b731 100%);
+  box-shadow: 
+    0 2px 10px rgba(255, 159, 67, 0.4),
+    0 4px 20px rgba(255, 159, 67, 0.2);
+}
+
+.icon {
+  width: 16px;
+  height: 16px;
+  color: white;
+  transition: transform 0.3s ease;
+}
+
+.themeSwitch:hover .icon {
+  transform: rotate(15deg);
+}
+
+.iconSlot {
+  flex: 1;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.slotIcon {
+  width: 14px;
+  height: 14px;
+  opacity: 0.4;
+  transition: opacity 0.3s ease;
+}
+
+.sunIcon {
+  color: #f7b731;
+}
+
+.moonIcon {
+  color: #a78bfa;
+}
+
+:global([data-theme="light"]) .sunIcon {
+  opacity: 0.6;
+}
+
+:global([data-theme="light"]) .moonIcon {
+  color: #6366f1;
+  opacity: 0.4;
+}
+
+/* Animation au survol */
+.themeSwitch:hover .switchTrack {
+  box-shadow: 
+    0 4px 20px rgba(102, 126, 234, 0.3),
+    0 0 30px rgba(102, 126, 234, 0.15);
+}
+
+:global([data-theme="light"]) .themeSwitch:hover .switchTrack {
+  box-shadow: 
+    0 4px 20px rgba(255, 159, 67, 0.3),
+    0 0 30px rgba(255, 159, 67, 0.15);
+}
+
+/* Responsive */
+@media (max-width: 768px) {
+  .themeSwitch {
+    top: 16px;
+    right: 16px;
+  }
+
+  .switchTrack {
+    width: 56px;
+    height: 30px;
+    border-radius: 15px;
+  }
+
+  .switchThumb {
+    width: 24px;
+    height: 24px;
+  }
+
+  .switchThumb.light {
+    left: calc(100% - 27px);
+  }
+
+  .icon {
+    width: 14px;
+    height: 14px;
+  }
+
+  .slotIcon {
+    width: 12px;
+    height: 12px;
+  }
+}

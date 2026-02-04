@@ -1,0 +1,198 @@
+.skillsSection {
+    --accent: #00f2ff;
+    background: #000;
+    padding: 8rem 2rem;
+    display: flex;
+    justify-content: center;
+    transition: background 0.4s ease;
+  }
+
+  :global([data-theme="light"]) .skillsSection {
+    background: linear-gradient(135deg, #ebe4ff 0%, #f0f4ff 50%, #f8f9ff 100%);
+  }
+  
+  .container {
+    width: 100%;
+    max-width: 1100px;
+  }
+  
+  .grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+    gap: 1.5rem;
+  }
+  
+  .cardWrapper {
+    transition: transform 0.1s ease-out;
+    transform-style: preserve-3d;
+  }
+  
+  .card {
+    position: relative;
+    background: rgba(15, 15, 15, 0.7);
+    border: 1px solid rgba(255, 255, 255, 0.08);
+    border-radius: 20px;
+    padding: 1.5rem;
+    height: 100%;
+    overflow: hidden;
+    backdrop-filter: blur(10px);
+    transition: all 0.4s ease;
+  }
+
+  :global([data-theme="light"]) .card {
+    background: rgba(255, 255, 255, 0.9);
+    border-color: rgba(0, 0, 0, 0.08);
+    box-shadow: 0 4px 20px rgba(0, 0, 0, 0.06);
+  }
+
+  :global([data-theme="light"]) .card:hover {
+    background: rgba(255, 255, 255, 1);
+    border-color: rgba(102, 126, 234, 0.3);
+    box-shadow: 0 10px 30px rgba(102, 126, 234, 0.12);
+  }
+  
+  /* HEADER : Alignement icône + titre */
+  .cardHeader {
+    display: flex;
+    align-items: center;
+    gap: 0.75rem; /* Espace entre icône et texte */
+    margin-bottom: 1.5rem;
+  }
+  
+  .iconWrapper {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    width: 32px;
+    height: 32px;
+    background: rgba(255, 255, 255, 0.05);
+    border: 1px solid rgba(255, 255, 255, 0.1);
+    border-radius: 8px;
+    color: var(--accent);
+    transition: all 0.4s ease;
+  }
+
+  :global([data-theme="light"]) .iconWrapper {
+    background: rgba(102, 126, 234, 0.1);
+    border-color: rgba(102, 126, 234, 0.2);
+    color: #667eea;
+  }
+  
+  .iconWrapper svg {
+    width: 18px;
+    height: 18px;
+  }
+  
+  .categoryTitle {
+    font-size: 1rem;
+    font-weight: 600;
+    color: #fff;
+    letter-spacing: 0.02em;
+    transition: color 0.4s ease;
+  }
+
+  :global([data-theme="light"]) .categoryTitle {
+    color: #1a1a2e;
+  }
+  
+  /* TAGS : Plus petits et plus denses */
+  .tagsContainer {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 8px;
+  }
+  
+  .skillTag {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 4px;
+    padding: 8px 12px;
+    font-size: 0.7rem;
+    color: #999;
+    transition: all 0.2s ease;
+  }
+
+  :global([data-theme="light"]) .skillTag {
+    color: #6b7280;
+  }
+
+  .skillIcon {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    color: var(--accent);
+    opacity: 0.7;
+    transition: all 0.2s ease;
+  }
+
+  :global([data-theme="light"]) .skillIcon {
+    color: #667eea;
+  }
+
+  .skillIcon svg {
+    width: 16px;
+    height: 16px;
+  }
+  
+  .skillTag:hover {
+    color: #fff;
+    transform: translateY(-2px);
+  }
+
+  :global([data-theme="light"]) .skillTag:hover {
+    color: #667eea;
+  }
+
+  .skillTag:hover .skillIcon {
+    color: #000;
+    opacity: 1;
+  }
+
+  :global([data-theme="light"]) .skillTag:hover .skillIcon {
+    color: #667eea;
+    opacity: 1;
+  }
+  
+  /* L'EFFET WOW : Border Beam discret */
+  .borderBeam {
+    position: absolute;
+    inset: 0;
+    border: 1px solid transparent;
+    border-radius: 20px;
+    background: conic-gradient(
+      from 0deg at 50% 50%,
+      transparent 0deg,
+      var(--accent) 60deg,
+      transparent 120deg
+    ) border-box;
+    mask: linear-gradient(#fff 0 0) padding-box, linear-gradient(#fff 0 0);
+    mask-composite: exclude;
+    animation: rotateBeam 4s linear infinite;
+    opacity: 0.3;
+    transition: background 0.4s ease;
+  }
+
+  :global([data-theme="light"]) .borderBeam {
+    background: conic-gradient(
+      from 0deg at 50% 50%,
+      transparent 0deg,
+      #667eea 60deg,
+      transparent 120deg
+    ) border-box;
+    opacity: 0.4;
+  }
+  
+  @keyframes rotateBeam {
+    from { transform: rotate(0deg) scale(2); }
+    to { transform: rotate(360deg) scale(2); }
+  }
+  
+  @keyframes slideUp {
+    from { opacity: 0; transform: translateY(40px); }
+    to { opacity: 1; transform: translateY(0); }
+  }
+  
+  .slideUp {
+    animation: slideUp 0.8s cubic-bezier(0.2, 0.8, 0.2, 1) forwards;
+  }

@@ -1,0 +1,10 @@
+.portfolio {
+  width: 100%;
+}
+
+/* Responsive */
+@media (max-width: 768px) {
+  .portfolio {
+    margin-left: 80px;
+  }
+}
