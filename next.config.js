@@ -5,9 +5,8 @@ const nextConfig = {
   images: {
     unoptimized: true,
   },
-  // Si tu déploies sur GitHub Pages avec un sous-chemin (ex: username.github.io/portfolio)
-  // décommente et modifie la ligne ci-dessous :
-  // basePath: '/portfolio',
+  basePath: '/portfolio',
+  assetPrefix: '/portfolio/',
 }
 
 module.exports = nextConfig
