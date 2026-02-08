@@ -9,44 +9,32 @@ import Contact from './Contact/Contact'
 import styles from './PortfolioContent.module.css'
 
 export default function PortfolioContent() {
-  const [isVisible, setIsVisible] = useState(false)
-  const portfolioRef = useRef<HTMLDivElement>(null)
+  const [skillsVisible, setSkillsVisible] = useState(false)
+  const [projectsVisible, setProjectsVisible] = useState(false)
+  const skillsRef = useRef<HTMLDivElement>(null)
+  const projectsRef = useRef<HTMLDivElement>(null)
 
   useEffect(() => {
-    const checkStage = () => {
-      if (document.body.classList.contains('stage-3')) {
-        setIsVisible(true)
-      }
-    }
-
     const observer = new IntersectionObserver(
       (entries) => {
         entries.forEach((entry) => {
-          if (entry.isIntersecting && document.body.classList.contains('stage-3')) {
-            setIsVisible(true)
+          if (entry.isIntersecting) {
+            if (entry.target === skillsRef.current) {
+              setSkillsVisible(true)
+            }
+            if (entry.target === projectsRef.current) {
+              setProjectsVisible(true)
+            }
           }
         })
       },
-      { threshold: 0.1 }
+      { threshold: 0, rootMargin: '200px' }
     )
 
-    const currentRef = portfolioRef.current
-    if (currentRef) {
-      observer.observe(currentRef)
-    }
+    if (skillsRef.current) observer.observe(skillsRef.current)
+    if (projectsRef.current) observer.observe(projectsRef.current)
 
-    checkStage()
-
-    const bodyObserver = new MutationObserver(checkStage)
-    bodyObserver.observe(document.body, {
-      attributes: true,
-      attributeFilter: ['class']
-    })
-
-    return () => {
-      observer.disconnect()
-      bodyObserver.disconnect()
-    }
+    return () => observer.disconnect()
   }, [])
 
   const scrollToNext = () => {
@@ -57,11 +45,15 @@ export default function PortfolioContent() {
   }
 
   return (
-    <div ref={portfolioRef} className={styles.portfolio}>
+    <div className={styles.portfolio}>
       <Hero onScrollToNext={scrollToNext} />
       <About />
-      <Skills isVisible={isVisible} />
-      <Projects isVisible={isVisible} />
+      <div ref={skillsRef}>
+        <Skills isVisible={skillsVisible} />
+      </div>
+      <div ref={projectsRef}>
+        <Projects isVisible={projectsVisible} />
+      </div>
       <Contact />
     </div>
   )

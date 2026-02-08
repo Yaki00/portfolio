@@ -18,7 +18,7 @@
   
   .grid {
     display: grid;
-    grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+    grid-template-columns: repeat(auto-fit, minmax(min(300px, 100%), 1fr));
     gap: 1.5rem;
   }
   
@@ -195,4 +195,65 @@
   
   .slideUp {
     animation: slideUp 0.8s cubic-bezier(0.2, 0.8, 0.2, 1) forwards;
+  }
+
+  /* Responsive - Tablette */
+  @media (max-width: 768px) {
+    .skillsSection {
+      padding: 4rem 1rem;
+    }
+
+    .grid {
+      grid-template-columns: 1fr;
+      gap: 1rem;
+    }
+
+    .card {
+      padding: 1.25rem;
+    }
+
+    .tagsContainer {
+      gap: 6px;
+    }
+
+    .skillTag {
+      padding: 6px 10px;
+      font-size: 0.65rem;
+    }
+
+    .skillIcon svg {
+      width: 14px;
+      height: 14px;
+    }
+  }
+
+  /* Responsive - Petit mobile */
+  @media (max-width: 480px) {
+    .skillsSection {
+      padding: 3rem 0.75rem;
+    }
+
+    .card {
+      padding: 1rem;
+      border-radius: 16px;
+    }
+
+    .cardHeader {
+      margin-bottom: 1rem;
+    }
+
+    .iconWrapper {
+      width: 28px;
+      height: 28px;
+      border-radius: 6px;
+    }
+
+    .iconWrapper svg {
+      width: 14px;
+      height: 14px;
+    }
+
+    .categoryTitle {
+      font-size: 0.9rem;
+    }
   }

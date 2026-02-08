@@ -415,22 +415,109 @@
     padding: 4rem 1rem;
   }
 
+  .sectionTitle {
+    margin-bottom: 2.5rem;
+  }
+
   .aboutIntro {
     grid-template-columns: 1fr;
     text-align: center;
     gap: 2rem;
+    padding: 1.5rem;
+    margin-bottom: 3rem;
   }
 
   .aboutAvatar {
     margin: 0 auto;
   }
 
+  .avatarPlaceholder {
+    width: 100px;
+    height: 100px;
+  }
+
+  .avatarInitials {
+    font-size: 2rem;
+  }
+
   .aboutText {
     text-align: center;
+  }
+
+  .text {
+    font-size: 0.9rem;
   }
 
   .timelineHeader {
     flex-direction: column;
     align-items: flex-start;
+  }
+
+  .timelineContent {
+    padding: 1rem;
+  }
+
+  .timelineTitle {
+    font-size: 0.9rem;
+  }
+
+  .timelineDescription {
+    font-size: 0.8rem;
+  }
+
+  .subsectionTitle {
+    font-size: 1.1rem;
+  }
+}
+
+@media (max-width: 480px) {
+  .aboutSection {
+    padding: 3rem 0.75rem;
+  }
+
+  .aboutIntro {
+    padding: 1.25rem;
+    border-radius: 16px;
+    gap: 1.5rem;
+  }
+
+  .avatarPlaceholder {
+    width: 80px;
+    height: 80px;
+    border-radius: 16px;
+  }
+
+  .avatarInitials {
+    font-size: 1.5rem;
+  }
+
+  .avatarRing {
+    border-radius: 20px;
+  }
+
+  .text {
+    font-size: 0.85rem;
+    line-height: 1.7;
+  }
+
+  .timelineContent {
+    padding: 0.875rem;
+    border-radius: 12px;
+  }
+
+  .timelineTag {
+    font-size: 0.65rem;
+    padding: 2px 8px;
+  }
+
+  .iconWrapper {
+    width: 36px;
+    height: 36px;
+    border-radius: 10px;
+  }
+
+  .sectionIcon {
+    width: 16px;
+    height: 16px;
   }
 }

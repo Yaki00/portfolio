@@ -70,7 +70,7 @@
 /* Grid */
 .projectsGrid {
   display: grid;
-  grid-template-columns: repeat(auto-fill, minmax(340px, 1fr));
+  grid-template-columns: repeat(auto-fill, minmax(min(340px, 100%), 1fr));
   gap: 1.5rem;
 }
 
@@ -265,10 +265,14 @@
   }
 }
 
-/* Responsive */
+/* Responsive - Tablette */
 @media (max-width: 768px) {
   .projectsSection {
-    padding: 4rem 1rem;
+    padding: 3rem 1rem;
+  }
+
+  .header {
+    margin-bottom: 1.5rem;
   }
 
   .projectsGrid {
@@ -282,5 +286,36 @@
 
   .projectInitial {
     font-size: 3rem;
+  }
+
+  .cardContent {
+    padding: 1.25rem;
+  }
+
+  .projectTitle {
+    font-size: 1.1rem;
+  }
+}
+
+/* Responsive - Petit mobile */
+@media (max-width: 480px) {
+  .projectsSection {
+    padding: 2rem 0.75rem;
+  }
+
+  .header {
+    margin-bottom: 1rem;
+  }
+
+  .imageWrapper {
+    height: 140px;
+  }
+
+  .cardContent {
+    padding: 1rem;
+  }
+
+  .projectDescription {
+    font-size: 0.8rem;
   }
 }

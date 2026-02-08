@@ -321,11 +321,30 @@
 
 @media (max-width: 768px) {
   .heroSection {
-    padding: 80px 0;
+    padding: 80px 0 100px;
+    min-height: 100dvh;
   }
 
   .container {
     padding: 0 20px;
+  }
+
+  .heroContent {
+    max-width: 100%;
+  }
+
+  .name {
+    font-size: clamp(1.8rem, 8vw, 3rem);
+  }
+
+  .role {
+    font-size: clamp(1.2rem, 5vw, 2rem);
+  }
+
+  .description {
+    font-size: 0.95rem;
+    line-height: 1.7;
+    padding: 0 0.5rem;
   }
 
   .heroButtons {
@@ -338,5 +357,54 @@
   .primaryButton,
   .secondaryButton {
     width: 100%;
+    padding: 12px 24px;
+    font-size: 0.9rem;
+  }
+
+  .heroTechStack {
+    margin-top: 2.5rem;
+    padding-top: 2rem;
+  }
+
+  .scrollIndicator {
+    bottom: 20px;
+    width: 40px;
+    height: 40px;
+  }
+
+  .scrollIcon {
+    width: 18px;
+    height: 18px;
+  }
+}
+
+@media (max-width: 480px) {
+  .heroSection {
+    padding: 60px 0 90px;
+  }
+
+  .container {
+    padding: 0 16px;
+  }
+
+  .heroBadge {
+    padding: 6px 14px;
+    margin-bottom: 1.5rem;
+  }
+
+  .badgeText {
+    font-size: 0.75rem;
+  }
+
+  .greeting {
+    font-size: 0.95rem;
+  }
+
+  .description {
+    font-size: 0.875rem;
+  }
+
+  .heroButtons {
+    max-width: 100%;
   }
 }

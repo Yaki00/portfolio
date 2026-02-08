@@ -175,4 +175,59 @@
   .techName {
     font-size: 0.75rem;
   }
+
+  .carouselItem.prev {
+    transform: scale(0.6) translateX(-70px);
+  }
+
+  .carouselItem.next {
+    transform: scale(0.6) translateX(70px);
+  }
+}
+
+@media (max-width: 480px) {
+  .carousel {
+    max-width: 100%;
+  }
+
+  .carouselTrack {
+    height: 90px;
+  }
+
+  .iconWrapper {
+    width: 48px;
+    height: 48px;
+    border-radius: 12px;
+  }
+
+  .techIcon {
+    width: 24px;
+    height: 24px;
+  }
+
+  .techName {
+    font-size: 0.7rem;
+  }
+
+  .carouselItem.prev {
+    transform: scale(0.5) translateX(-50px);
+  }
+
+  .carouselItem.next {
+    transform: scale(0.5) translateX(50px);
+  }
+
+  .dot {
+    width: 5px;
+    height: 5px;
+  }
+
+  .dot.active {
+    width: 16px;
+  }
+
+  .carouselDots {
+    gap: 4px;
+    margin-top: 14px;
+  }
 }

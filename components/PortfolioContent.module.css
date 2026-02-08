@@ -2,9 +2,10 @@
   width: 100%;
 }
 
-/* Responsive */
+/* Responsive - navbar is at the bottom on mobile, no left margin needed */
 @media (max-width: 768px) {
   .portfolio {
-    margin-left: 80px;
+    margin-left: 0;
+    padding-bottom: 70px; /* espace pour la navbar fixe en bas */
   }
 }
