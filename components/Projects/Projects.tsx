@@ -1,12 +1,14 @@
 'use client'
 
-import Image from 'next/image'
 import { ArrowTopRightOnSquareIcon } from '@heroicons/react/24/outline'
 import styles from './Projects.module.css'
 
 interface ProjectsProps {
   isVisible: boolean
 }
+
+/** basePath GitHub Pages — next/image unoptimized ne le préfixe pas toujours */
+const BASE = '/portfolio'
 
 const projects = [
   {
@@ -16,7 +18,7 @@ const projects = [
       'Studio web & mobile pour PME et SaaS. Site agence, devis, SEO local et preuve sociale des livraisons.',
     tags: ['Next.js', 'TypeScript', 'SEO'],
     link: 'https://pixelbrain.fr/',
-    image: '/images/projects/pixelbrain.jpg',
+    image: `${BASE}/images/projects/pixelbrain.jpg`,
     accent: '#2dd4bf',
   },
   {
@@ -26,7 +28,7 @@ const projects = [
       'Site vitrine pour le Cinéma Omar Sy — Le Grenier à Sel (Mairie de Trappes) : programmation, horaires, jeune public et billetterie EMS. Cinq directions graphiques sur gas.pixelbrain.fr.',
     tags: ['Site Vitrine', 'Culture', 'React', 'Design'],
     link: 'https://gas.pixelbrain.fr/',
-    image: '/images/projects/gas.jpg',
+    image: `${BASE}/images/projects/gas.jpg`,
     accent: '#2563eb',
   },
   {
@@ -36,7 +38,7 @@ const projects = [
       'Boutique e-commerce pour créations tricotées bébé : pièces uniques, sur-mesure, catalogue, panier, checkout et back-office. Monorepo Next.js / NestJS / Prisma — mise en ligne prochainement.',
     tags: ['E-Commerce', 'Next.js', 'NestJS', 'Sur-mesure'],
     link: '',
-    image: '/images/projects/tisseuse.jpg',
+    image: `${BASE}/images/projects/tisseuse.jpg`,
     accent: '#db2777',
   },
   {
@@ -46,7 +48,7 @@ const projects = [
       'SaaS de fidélisation pour commerces de proximité : carte QR, branding, Apple & Google Wallet, scan boutique, récompenses et dashboard commerçant.',
     tags: ['SaaS', 'Fidélité', 'Next.js', 'NestJS'],
     link: 'https://card.pixelbrain.fr/',
-    image: '/images/projects/pixelbraincard.jpg',
+    image: `${BASE}/images/projects/pixelbraincard.jpg`,
     accent: '#0f766e',
   },
   {
@@ -56,7 +58,7 @@ const projects = [
       'Site vitrine mobile-first pour atelier à Trappes et interventions à domicile en Île-de-France : grille tarifaire, avis modérés, SEO local et Docker.',
     tags: ['Site Vitrine', 'Mobile-first', 'SEO Local', 'NestJS'],
     link: 'https://ratus.pixelbrain.fr/',
-    image: '/images/projects/ratus.jpg',
+    image: `${BASE}/images/projects/ratus.jpg`,
     accent: '#f59e0b',
   },
   {
@@ -66,7 +68,7 @@ const projects = [
       'Site vitrine immersif pour un assistant proactif (vision et mémoire contextuelle) : animations au scroll et pré-inscription early adopter.',
     tags: ['Site Vitrine', 'Design', 'Animation', 'IA'],
     link: 'https://mirraa.netlify.app/',
-    image: '/images/projects/mira.jpg',
+    image: `${BASE}/images/projects/mira.jpg`,
     accent: '#00f2ff',
   },
   {
@@ -76,7 +78,7 @@ const projects = [
       'Boutique en ligne de créations artisanales Made in France : identité chaleureuse, pré-lancement newsletter, SEO et intégration e-commerce.',
     tags: ['E-Commerce', 'Design', 'SEO'],
     link: 'https://lamymy.fr/',
-    image: '/images/projects/lamymy.jpg',
+    image: `${BASE}/images/projects/lamymy.jpg`,
     accent: '#f5576c',
   },
   {
@@ -84,7 +86,7 @@ const projects = [
     title: 'M2L',
     description: 'Application mobile pour association sportive. Messagerie de groupe et DM entre joueurs.',
     tags: ['Flutter', 'Firebase', 'Dart'],
-    link: '/AP4.pdf',
+    link: `${BASE}/AP4.pdf`,
     accent: '#38ef7d',
   },
   {
@@ -131,12 +133,12 @@ export default function Projects({ isVisible }: ProjectsProps) {
             >
               <div className={styles.imageWrapper}>
                 {'image' in project && project.image ? (
-                  <Image
+                  // eslint-disable-next-line @next/next/no-img-element
+                  <img
                     src={project.image}
                     alt={`Aperçu du projet ${project.title}`}
-                    fill
-                    sizes="(max-width: 768px) 100vw, 340px"
                     className={styles.projectImage}
+                    loading="lazy"
                   />
                 ) : (
                   <div
