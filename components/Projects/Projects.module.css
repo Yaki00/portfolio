@@ -134,6 +134,7 @@
 
 .projectImage {
   object-fit: cover;
+  object-position: top center;
   transition: transform 0.6s cubic-bezier(0.4, 0, 0.2, 1);
 }
 

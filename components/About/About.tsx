@@ -117,6 +117,35 @@ export default function About() {
                 <div className={styles.timelineContent}>
                   <div className={styles.timelineHeader}>
                     <div>
+                      <h4 className={styles.timelineTitle}>Fondateur / Développeur Full Stack</h4>
+                      <p className={styles.timelineCompany}>
+                        <MapPinIcon className={styles.locationIcon} />
+                        Pixel Brain
+                      </p>
+                    </div>
+                    <div className={styles.timelineDateBadge}>
+                      <CalendarIcon className={styles.dateIcon} />
+                      <span className={styles.timelineDate}>2024 - Présent</span>
+                    </div>
+                  </div>
+                  <p className={styles.timelineDescription}>
+                    Studio web &amp; mobile pour PME et SaaS : livraison de sites, e-commerce et produits
+                    (PixelbrainCard, GAS, Ratus…). Cadrage produit, stack Next.js / NestJS, déploiement Docker et SEO local.
+                  </p>
+                  <div className={styles.timelineTags}>
+                    <span className={styles.timelineTag}>Next.js</span>
+                    <span className={styles.timelineTag}>NestJS</span>
+                    <span className={styles.timelineTag}>SaaS</span>
+                    <span className={styles.timelineTag}>Docker</span>
+                    <span className={styles.timelineTag}>SEO</span>
+                  </div>
+                </div>
+              </div>
+
+              <div className={`${styles.timelineItem} ${visibleItems.has(1) ? styles.visible : ''}`}>
+                <div className={styles.timelineContent}>
+                  <div className={styles.timelineHeader}>
+                    <div>
                       <h4 className={styles.timelineTitle}>Architect Cloud / DevOps</h4>
                       <p className={styles.timelineCompany}>
                         <MapPinIcon className={styles.locationIcon} />
@@ -144,7 +173,7 @@ export default function About() {
                 </div>
               </div>
 
-              <div className={`${styles.timelineItem} ${visibleItems.has(1) ? styles.visible : ''}`}>
+              <div className={`${styles.timelineItem} ${visibleItems.has(2) ? styles.visible : ''}`}>
                 <div className={styles.timelineContent}>
                   <div className={styles.timelineHeader}>
                     <div>
@@ -175,7 +204,7 @@ export default function About() {
                 </div>
               </div>
 
-              <div className={`${styles.timelineItem} ${visibleItems.has(2) ? styles.visible : ''}`}>
+              <div className={`${styles.timelineItem} ${visibleItems.has(3) ? styles.visible : ''}`}>
                 <div className={styles.timelineContent}>
                   <div className={styles.timelineHeader}>
                     <div>
@@ -215,7 +244,7 @@ export default function About() {
               <h3 className={styles.subsectionTitle}>Études et formations</h3>
             </div>
             <div className={styles.timeline}>
-              <div className={`${styles.timelineItem} ${visibleItems.has(3) ? styles.visible : ''}`}>
+              <div className={`${styles.timelineItem} ${visibleItems.has(4) ? styles.visible : ''}`}>
                 <div className={styles.timelineContent}>
                   <div className={styles.timelineHeader}>
                     <div>
@@ -244,7 +273,7 @@ export default function About() {
                 </div>
               </div>
 
-              <div className={`${styles.timelineItem} ${visibleItems.has(4) ? styles.visible : ''}`}>
+              <div className={`${styles.timelineItem} ${visibleItems.has(5) ? styles.visible : ''}`}>
                 <div className={styles.timelineContent}>
                   <div className={styles.timelineHeader}>
                     <div>
