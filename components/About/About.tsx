@@ -130,7 +130,7 @@ export default function About() {
                   </div>
                   <p className={styles.timelineDescription}>
                     Studio web &amp; mobile pour PME et SaaS : livraison de sites, e-commerce et produits
-                    (PixelbrainCard, GAS, Ratus…). Cadrage produit, stack Next.js / NestJS, déploiement Docker et SEO local.
+                    (PixelCard, GAS, Ratus…). Cadrage produit, stack Next.js / NestJS, déploiement Docker et SEO local.
                   </p>
                   <div className={styles.timelineTags}>
                     <span className={styles.timelineTag}>Next.js</span>

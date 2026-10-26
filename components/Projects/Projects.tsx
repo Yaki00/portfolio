@@ -43,11 +43,11 @@ const projects = [
   },
   {
     id: 'pixelbraincard',
-    title: 'PixelbrainCard — Carte de fidélité digitale',
+    title: 'PixelCard — Carte de fidélité digitale',
     description:
       'SaaS de fidélisation pour commerces de proximité : carte QR, branding, Apple & Google Wallet, scan boutique, récompenses et dashboard commerçant.',
     tags: ['SaaS', 'Fidélité', 'Next.js', 'NestJS'],
-    link: 'https://card.pixelbrain.fr/',
+    link: 'https://pixelcard.fr/',
     image: `${BASE}/images/projects/pixelbraincard.jpg`,
     accent: '#0f766e',
   },
